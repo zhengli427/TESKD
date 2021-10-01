@@ -1,4 +1,4 @@
-# TESKD
+# TESKD: Student Helping Teacher: Teacher Evolution via Self-Knowledge Distillation
 
 By Zheng Li<sup>[1,4]</sup>, Xiang Li<sup>[2]</sup>, Lingfeng Yang<sup>[2,4]</sup>, Jian Yang<sup>[2]</sup>, Zhigeng Pan<sup>[3]</sup>*.
 
@@ -6,9 +6,11 @@ By Zheng Li<sup>[1,4]</sup>, Xiang Li<sup>[2]</sup>, Lingfeng Yang<sup>[2,4]</su
 
 Email: lizheng1@stu.hznu.edu.cn
 
+![avatar](architecture.jpg)
+
 ## Implementation
 
-This is the official pytorch implementation for [Student Helping Teacher: Teacher Evolution via Self-Knowledge Distillation]()(TESKD)
+This is the official pytorch implementation for [Student Helping Teacher: Teacher Evolution via Self-Knowledge Distillation]()
 
 In ths repository, all the models are implemented by Pytorch.
 
