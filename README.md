@@ -1,4 +1,4 @@
-# TESKD: Student Helping Teacher: Teacher Evolution via Self-Knowledge Distillation
+# Student Helping Teacher: Teacher Evolution via Self-Knowledge Distillation (TESKD)
 
 By Zheng Li<sup>[1,4]</sup>, [Xiang Li<sup>[2]</sup>](http://implus.github.io/), Lingfeng Yang<sup>[2,4]</sup>, Jian Yang<sup>[2]</sup>, Zhigeng Pan<sup>[3]</sup>*.
 
@@ -39,13 +39,13 @@ This is the official pytorch implementation for the TESKD.
 ## Training 
 
 In this code, you can reproduce the experiment results of classification task in the paper, including CIFAR-100 and ImageNet.
-Example training settings are for ResNet18 on CIFAR-100.
+Example training settings are for ResNet18 on CIFAR-100 dataset.
 
 - Running TESKD.
 ~~~
 python classification/main.py \
       --data_dir 'your_data_directory'\
-      --final_dir 'your_storage_directory'\
+      --final_dir 'your_model_storage_directory'\
       --name 'res18_our_cifar'\
       --model_name 'resnet_our'\
       --network_name 'cifarresnet18'\
