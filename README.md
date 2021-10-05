@@ -39,13 +39,15 @@ This is the official pytorch implementation for the TESKD.
 ## Training 
 
 In this code, you can reproduce the experiment results of classification task in the paper, including CIFAR-100 and ImageNet.
-Example training settings are for ResNet18 on CIFAR-100 dataset.
 
-- Running TESKD.
+- Running TESKD for ResNet18 on CIFAR-100 dataset.
+
+(We run this experiment on a single machine that contains one NVIDIA GeForce RTX 2080Ti GPU)
+
 ~~~
 python classification/main.py \
-      --data_dir 'your_data_directory'\
-      --final_dir 'your_model_storage_directory'\
+      --data_dir 'your_data_path'\
+      --final_dir 'your_model_storage_path'\
       --name 'res18_our_cifar'\
       --model_name 'resnet_our'\
       --network_name 'cifarresnet18'\

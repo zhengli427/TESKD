@@ -64,7 +64,7 @@ def main():
     this_dir = os.path.dirname(__file__)
     if args.data == 'CIFAR100':
         mdl_path = 'models'
-    else:
+    elif args.data == 'ImageNet':
         mdl_path = 'models_imagenet'
     shutil.copy2(os.path.join(this_dir, mdl_path, args.model_name + '.py'), path_log)
     args.batch_size = int(args.batch_size / args.nprocs)
