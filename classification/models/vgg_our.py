@@ -31,10 +31,6 @@ def auxiliary_branch(channel_in, channel_out, kernel_size=3):
     layers.append(nn.BatchNorm2d(channel_out)),
     layers.append(nn.ReLU()),
 
-    # layers.append(nn.Conv2d(middle_channel, channel_out, kernel_size=1, stride=1))
-    # layers.append(nn.BatchNorm2d(channel_out))
-    # layers.append(nn.ReLU())
-
     return nn.Sequential(*layers)
 
 
@@ -104,7 +100,6 @@ class VGG(nn.Module):
         self.avg_b1 = nn.AdaptiveAvgPool2d((1, 1))
         self.avg_b2 = nn.AdaptiveAvgPool2d((1, 1))
         self.avg_b3 = nn.AdaptiveAvgPool2d((1, 1))
-        # self.avg_b4 = nn.AdaptiveAvgPool2d((1, 1))
 
         self.fc_b1 = nn.Linear(512, num_classes)
         self.fc_b2 = nn.Linear(512, num_classes)
@@ -121,7 +116,6 @@ class VGG(nn.Module):
             elif isinstance(m, nn.Linear):
                 nn.init.normal_(m.weight, 0, 0.01)
                 nn.init.constant_(m.bias, 0)
-
 
     def _upsample(self, channels=512):
         layers = []
@@ -210,9 +204,6 @@ class VGG(nn.Module):
 def vgg16(pretrained=False, path=None, **kwargs):
     """
     Constructs a VGG16 model.
-
-    Args:
-        pretrained (bool): If True, returns a model pre-trained.
     """
     model = VGG(depth=16, **kwargs)
     if pretrained:
@@ -223,9 +214,6 @@ def vgg16(pretrained=False, path=None, **kwargs):
 def vgg19(pretrained=False, path=None, **kwargs):
     """
     Constructs a VGG19 model.
-
-    Args:
-        pretrained (bool): If True, returns a model pre-trained.
     """
     model = VGG(depth=19, **kwargs)
     if pretrained:

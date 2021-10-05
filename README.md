@@ -20,7 +20,7 @@ performance.
 
 **Overall Architecture**
 ![avatar](architecture.jpg)
-An overview of the our proposed TESKD. We divide the target backbone teacher into four blocks and construct three hierarchical student sub-networks #1, #2
+An overview of our proposed TESKD. We divide the target backbone teacher into four blocks and construct three hierarchical student sub-networks #1, #2
 and #3 in a FPN-like way by sharing various stages of the teacher backbone features. 
 
 ## Implementation

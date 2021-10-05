@@ -47,8 +47,6 @@ def conv1x1(in_planes, out_planes, stride=1):
 def auxiliary_branch(channel_in, channel_out, kernel_size=3):
     layers = []
 
-    # middle_channel = channel_out // 4
-
     layers.append(nn.Conv2d(channel_in, channel_out, kernel_size=kernel_size, stride=kernel_size))
     layers.append(nn.BatchNorm2d(channel_out))
     layers.append(nn.ReLU())
@@ -57,29 +55,8 @@ def auxiliary_branch(channel_in, channel_out, kernel_size=3):
     layers.append(nn.BatchNorm2d(channel_out)),
     layers.append(nn.ReLU()),
 
-    # layers.append(nn.Conv2d(middle_channel, channel_out, kernel_size=1, stride=1))
-    # layers.append(nn.BatchNorm2d(channel_out))
-    # layers.append(nn.ReLU())
 
     return nn.Sequential(*layers)
-
-
-# class SELayer(nn.Module):
-#     def __init__(self, channel, reduction=16):
-#         super(SELayer, self).__init__()
-#         self.avg_pool = nn.AdaptiveAvgPool2d(1)
-#         self.fc = nn.Sequential(
-#             nn.Linear(channel, channel // reduction, bias=False),
-#             nn.ReLU(inplace=True),
-#             nn.Linear(channel // reduction, channel, bias=False),
-#             nn.Sigmoid()
-#         )
-#
-#     def forward(self, x):
-#         b, c, _, _ = x.size()
-#         y = self.avg_pool(x).view(b, c)
-#         y = self.fc(y).view(b, c, 1, 1)
-#         return x * y.expand_as(x)
 
 
 class BasicBlock(nn.Module):
@@ -194,8 +171,7 @@ class CIFAR_ResNet(nn.Module):
             laterals.append(self._lateral(self.network_channels[i], 512 * block.expansion))
         for i in range(1, 4):
             upsample.append(self._upsample(channels=512 * block.expansion))
-        # fuse = []
-        # fuse.append(self._fuse())
+
         self.laterals = nn.ModuleList(laterals)
         self.upsample = nn.ModuleList(upsample)
         self.fuse_1 = nn.Sequential(
@@ -359,8 +335,6 @@ def cifarresnet50(pretrained=False, **kwargs):
 #         model = ResNet(Bottleneck, [3, 4, 6, 3], **kwargs)
 #
 #     return model
-
-
 
 
 if __name__ == '__main__':

@@ -12,8 +12,6 @@ import torch.nn.functional as F
 def auxiliary_branch(channel_in, channel_out, kernel_size=3):
     layers = []
 
-    # middle_channel = channel_out // 4
-
     layers.append(nn.Conv2d(channel_in, channel_out, kernel_size=kernel_size, stride=kernel_size))
     layers.append(nn.BatchNorm2d(channel_out))
     layers.append(nn.ReLU())
@@ -271,11 +269,3 @@ def seresnet34(**kwargs):
 
 def seresnet50(**kwargs):
     return SEResNet(BottleneckResidualSEBlock, [3, 4, 6, 3], **kwargs)
-
-
-def seresnet101():
-    return SEResNet(BottleneckResidualSEBlock, [3, 4, 23, 3])
-
-
-def seresnet152():
-    return SEResNet(BottleneckResidualSEBlock, [3, 8, 36, 3])
