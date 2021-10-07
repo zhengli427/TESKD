@@ -33,6 +33,7 @@ def main():
     parser.add_argument('--momentum', default=0.9, type=float)
     parser.add_argument('--weight_decay', default=5e-4, type=float)
     parser.add_argument('--save_model', default=True, type=bool)
+    parser.add_argument('--temperature', default=4, type=float)
 
     parser.add_argument('--fea_weight', default=1e-7, type=float)
     parser.add_argument('--kd_weight', default=0.8, type=float)
@@ -79,7 +80,7 @@ def main():
     criterion_ce = nn.CrossEntropyLoss().cuda()
     # criterion_ce = nn.CrossEntropyLoss().cuda(args.local_rank)
 
-    criterion_kd = distill_loss.KD.KL_Loss(temperature=3).cuda()
+    criterion_kd = distill_loss.KD.KL_Loss(temperature=args.temperature).cuda()
     # criterion_kd = distill_loss.KD.KL_Loss(temperature=3).cuda(args.local_rank)
 
     criterion_fea = distill_loss.Fea_Loss()

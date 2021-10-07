@@ -27,7 +27,7 @@ and #3 in a FPN-like way by sharing various stages of the teacher backbone featu
 
 Student Helping Teacher: **T**eacher **E**volution via **S**elf-**K**nowledge **D**istillation(TESKD) https://arxiv.org/abs/2110.00329
 
-This is the official pytorch implementation for the TESKD.
+This is the official pytorch implementation for the TESKD. This repository is extended based on [FRSKD](https://github.com/MingiJi/FRSKD).
 
 ## Requirements
 - Python3
