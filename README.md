@@ -40,9 +40,11 @@ This is the official pytorch implementation for the TESKD. This repository is ex
 
 In this code, you can reproduce the experiment results of classification task in the paper, including CIFAR-100 and ImageNet.
 
-- Running TESKD for ResNet18 on CIFAR-100 dataset.
+- Running TESKD for ResNet18 on CIFAR-100 dataset. 
 
-(We run this experiment on a single machine that contains one NVIDIA GeForce RTX 2080Ti GPU)
+Here is the **Training Log**: [[Baidu Yun](https://pan.baidu.com/s/1hA0TXFvRpwRpI0DJPM4cdw)](Extraction code: dow2)
+
+(Running based on one NVIDIA RTX 2080Ti GPU)
 
 ~~~
 python classification/main.py \
