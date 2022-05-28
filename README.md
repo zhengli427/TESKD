@@ -1,6 +1,6 @@
 # Student Helping Teacher: Teacher Evolution via Self-Knowledge Distillation (TESKD)
 
-By Zheng Li<sup>[1,4]</sup>, [Xiang Li<sup>[2]</sup>](http://implus.github.io/), Lingfeng Yang<sup>[2,4]</sup>, Jian Yang<sup>[2]</sup>, Zhigeng Pan<sup>[3]</sup>*.
+By Zheng Li<sup>[1,4]</sup>, Xiang Li<sup>[2]</sup>, Lingfeng Yang<sup>[2,4]</sup>, Jian Yang<sup>[2]</sup>, Zhigeng Pan<sup>[3]</sup>*.
 
 <sup>[1]</sup>Hangzhou Normal University, <sup>[2]</sup>Nanjing University of Science and Technology, <sup>[3]</sup>Nanjing University of Information Science and Technology, <sup>[4]</sup>MEGVII Technology
 
